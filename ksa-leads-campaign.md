@@ -24,3 +24,12 @@ Był przeterminowany draft "Xenia Dubai TikTok - AR/EN - 17-20.08" (ostatnia edy
 - Sekcja Instant Form "Introduction" (logo/headline) wymaga obrazka jeśli włączona — prościej wyłączyć cały toggle "Logo" (lub sekcję Introduction) niż wgrywać plik przez ukryty `<input type=file>` (Chrome DevTools automation nie widzi go w a11y tree, trzeba było tymczasowo odsłaniać go CSS-em).
 - Kliknięcie nie tego elementu (np. StaticText zamiast właściwego kontenera) potrafiło przypadkiem trafić w ukryty przycisk "Exit" i wywołać dialog "Are you sure you'd like to exit?" — trzeba zaznaczyć "Don't show again" i kliknąć "Stay".
 - Ad-level "Text" pole czasem nie przyjmowało pełnego wpisanego tekstu przez `fill` (ucinało do przypadkowego fragmentu) — trzeba było ustawiać `.value` bezpośrednio przez JS + dispatch `input`/`change` eventów.
+
+## Odrzucenie reklamy — błędna klasyfikacja branży (31.08.2026)
+
+Status ad group zmienił się na "Not delivering" / "Review not approved" krótko po starcie. Powód podany przez TikToka: *"This ad group belongs to 'Real Estate Agency' industry, which requires additional documents or qualification checks"* (reguła `SA-Real Estate`, region: Saudi Arabia).
+
+- To błędna automatyczna klasyfikacja — prawdopodobnie wyzwolona przez słowa związane z hotelem/nieruchomością w arabskim tekście reklamy lub opisie firmy. Marotino to SaaS/AI dla hotelarstwa, nie agencja nieruchomości.
+- Nie ma pola "Industry" do ręcznej zmiany ani na poziomie kampanii, ani ad group, ani w ustawieniach konta — klasyfikacja jest przypisywana automatycznie przez system przeglądu treści.
+- **Rozwiązanie: przycisk "Appeal"** w panelu szczegółów odrzucenia (Ads Manager → zakładka "Ad" → kliknięcie statusu "Review not approved" → "View more" → "Appeal"). Złożono odwołanie 31.08.2026 z powodem "I don't think there's a violation" i opisem wyjaśniającym, że produkt to AI recepcjonista dla hoteli, nie usługi nieruchomości. Po submicie cała ad group wraca do ponownej weryfikacji.
+- Do sprawdzenia: status apelacji w ciągu 24-48h.
