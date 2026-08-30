@@ -7,11 +7,11 @@
 
 ## TikTok Ads Manager
 
-- Login: konto TikTok (`tiktok.com`) jest zalogowane w przeglądarce Chrome sesji, ale **TikTok Ads Manager / Business Center wymaga osobnego logowania** (`ads.tiktok.com`) — sama sesja tiktok.com nie wystarcza, próba "Log in with TikTok" wymaga ręcznego potwierdzenia.
-- **Kampania Dubaj** (ustalona z Mohammadem Naser Eldine w DM 12.08.2026): Spark Ad z filmu portfolio `tiktok.com/@marotino_com/video/7673115280951971094`, formalny arabski z akcentem GCC, plan start "od poniedziałku" — brak potwierdzenia że kampania faktycznie ruszyła w Ads Manager.
+- Login: konto TikTok (`tiktok.com`) jest zalogowane w przeglądarce Chrome sesji, ale **TikTok Ads Manager / Business Center wymaga osobnego logowania** (`ads.tiktok.com`) — sama sesja tiktok.com nie wystarcza. Login przez email+hasło do konta Ads Managera (nie "Log in with TikTok") zadziałał 31.08.2026.
+- **Kampania "KSA Leads - Spark Ad - Arabic"** uruchomiona 31.08.2026 — patrz [`ksa-leads-campaign.md`](ksa-leads-campaign.md). Użyto tego samego filmu portfolio co planowana wcześniej kampania Dubaj (`tiktok.com/@marotino_com/video/7673115280951971094`), ale finalnie targetowana na Arabię Saudyjską (taniej niż UAE) z celem Lead Generation zamiast Traffic.
 
 ## Do zrobienia
 
 - Dodać custom event (np. `ttq.track('Contact')`) na submit formularza kontaktowego, analogicznie do `generate_lead` w GA4.
 - Zweryfikować w TikTok Events Manager czy pixel faktycznie dostaje ruch (Test Events / Diagnostics).
-- Ustawić/zweryfikować Spark Ad Code dla filmu portfolio i podpiąć budżet+targeting na Dubaj.
+- Śledzić wyniki kampanii KSA Leads w Leads Center i ewentualnie dodać więcej kreatywów (TikTok sugeruje min. 6 dla lepszego kosztu/lead).
