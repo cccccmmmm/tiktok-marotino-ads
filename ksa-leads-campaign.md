@@ -62,3 +62,20 @@ Realna naprawa wymaga jednego z:
 2. **Wgrania wideo jako świeżej kreacji** (nie jako recykling posta) w zakładce "Creative library" — obecnie pusta, więc wymaga pobrania pliku wideo i ponownego wgrania jako samodzielny asset reklamowy z czystym, kontrolowanym tekstem bez dziedziczenia captiona posta.
 
 Sprawdzono zakładkę "Creative library" w Ads Managerze — pusta, brak alternatywnego assetu bez hashtagów. Do decyzji: czy edytować publiczny post organiczny, czy pobrać i wgrać wideo jako osobny asset.
+
+## Rozwiązanie wdrożone (31.08.2026, druga sesja)
+
+TikTok (web) nie pozwala edytować opisu już opublikowanego posta — sprawdzone w TikTok Studio ("..." menu → tylko Pin/Playlist/Download/Delete, brak Edit) i na stronie posta. Próba usunięcia starego posta zablokowana komunikatem: *"Videos with commercial content can only be edited on the TikTok app"* — post był powiązany z aktywną reklamą.
+
+Wdrożone rozwiązanie:
+1. Cezary dostarczył lokalny plik źródłowy `202608121355.mp4` (ten sam klip co oryginalny post, bez wypalonych hashtagów w opisie).
+2. Wgrano go jako **nowy** post na @marotino_com w TikTok Studio z czystym, neutralnym opisem — bez żadnych słów hotel/turystyka/nieruchomość:
+   > "لماذا يظل ضيوفك بانتظار الرد؟ 📲🤖 احصل على تطبيقك الخاص بنظام "وايت ليبل" وباسم علامتك التجارية فوراً — دون انتظار لشهور من التطوير! 🚀✨ ارتقِ بتجربة عملائك وسهّل عمل فريقك الآن. #الذكاء_الاصطناعي #تطبيقات_ذكية #وايت_ليبل #تقنية_الأعمال #خدمة_العملاء #حلول_ذكية #تطوير_تطبيقات #أعمال"
+   Nowy post: `tiktok.com/@marotino_com/video/7680114383590313219`.
+3. W Ads Managerze (Ad → Edit → Creative assets → Edit selections → zakładka "TikTok posts") podmieniono kreację reklamy ze starego posta na nowy.
+4. Kliknięto Submit — reklama wróciła do statusu **"Pending — Review for modification"**.
+5. Dopiero po podmianie kreacji dało się skasować stary post (blokada commercial-content znika, gdy żadna aktywna reklama go nie używa) — do zrobienia jako ostatni krok.
+
+Pułapka techniczna przy edycji opisu: pole opisu w TikTok Studio to edytor Draft.js z obsługą RTL — wpisywanie przez symulowane zdarzenia klawiatury (`type_text`/pojedyncze `Backspace`) powodowało przekręcanie kolejności znaków arabskich. Zadziałało tylko `document.execCommand('delete')` + `document.execCommand('insertText', false, tekst)` w jednym wywołaniu.
+
+Do zrobienia: sprawdzić za 24-48h czy nowa reklama przeszła weryfikację i czy zniknęła klasyfikacja "Real Estate Agency"; potem skasować stary post (7673115280951971094, 605 wyświetleń).
