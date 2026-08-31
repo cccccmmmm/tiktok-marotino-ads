@@ -25,6 +25,18 @@ Był przeterminowany draft "Xenia Dubai TikTok - AR/EN - 17-20.08" (ostatnia edy
 - Kliknięcie nie tego elementu (np. StaticText zamiast właściwego kontenera) potrafiło przypadkiem trafić w ukryty przycisk "Exit" i wywołać dialog "Are you sure you'd like to exit?" — trzeba zaznaczyć "Don't show again" i kliknąć "Stay".
 - Ad-level "Text" pole czasem nie przyjmowało pełnego wpisanego tekstu przez `fill` (ucinało do przypadkowego fragmentu) — trzeba było ustawiać `.value` bezpośrednio przez JS + dispatch `input`/`change` eventów.
 
+## Brak numeru telefonu w leadach — dodane pole Phone number (31.08.2026)
+
+Pierwszy lead (Nasru Dheen, `nasrudheen.ad56@hotmail.com`) przyszedł z samym mailem — formularz miał tylko pola imię + email, telefon nigdy nie był zbierany. Ten lead zostaje bez numeru (nie da się uzupełnić retroaktywnie).
+
+Naprawa: w Ads Managerze → Edit ad → Instant Form → kliknięcie ikony edycji otworzyło edytor formularza (`instant_page/editor/main?type=copy&page_id=7679941286060622088`). W sekcji **Personal Information** dodano nowe pole **Q3 Phone number** (dropdown Add → Contact information → Phone number). Pola Personal Information (Email/Name/Phone) są wymagane domyślnie — nie mają przełącznika "Optional" jak pola Custom.
+
+Ponieważ formularz był już aktywny/używany, TikTok nie pozwolił edytować go w miejscu — otworzył edytor w trybie `type=copy` i po zapisaniu ("Complete") podmienił formularz na nową wersję: **"Untitled form 8/31/26, 00:17 Copy"**, podpiętą automatycznie pod istniejący ad. Po Submit reklama wróciła do statusu "Active — Creative in edit review" (ponowna weryfikacja po edycji kreacji).
+
+Znana pułapka UI: przycisk "+ Add" pod Personal Information to popper-trigger (`byted-popper-trigger-click`) zagnieżdżony w kilku warstwach divów — zwykły klik w a11y-tree trafiał w wewnętrzny div bez handlera; zadziałał dopiero klik na zewnętrznym `<span class="byted-popper-trigger-click byted-dropdown-trigger">` z pełną sekwencją pointerdown/mousedown/pointerup/mouseup/click.
+
+Nierozwiązane: nowe pole ma etykiety po angielsku ("Phone number", "Enter phone number") w formularzu, który poza tym jest cały po arabsku — istniejące ostrzeżenie Ads Managera "form language is inconsistent" (sprzed tej zmiany, bo form language było ustawione na "English" mimo arabskiej treści) to uwypukla. Do rozważenia: przetłumaczenie etykiety na arabski dla spójności/konwersji.
+
 ## Odrzucenie reklamy — błędna klasyfikacja branży (31.08.2026)
 
 Status ad group zmienił się na "Not delivering" / "Review not approved" krótko po starcie. Powód podany przez TikToka: *"This ad group belongs to 'Real Estate Agency' industry, which requires additional documents or qualification checks"* (reguła `SA-Real Estate`, region: Saudi Arabia).
