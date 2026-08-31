@@ -45,3 +45,20 @@ W panelu (Ads Manager → Ad → status "Review not approved" → "View more") w
 Czyli TikTok podtrzymał klasyfikację "Real Estate Agency" dla regionu Saudi Arabia i teraz wymaga albo (a) przesłania dokumentów/kwalifikacji nieruchomościowych (nierealne — Marotino nie jest agencją nieruchomości), albo (b) zmiany treści reklamy/opisu firmy tak, żeby nie wyzwalać tej klasyfikacji, i złożenia nowej reklamy od zera zamiast dalszego odwoływania się od tej samej.
 
 Do zrobienia: zdecydować, czy przerabiać kreatywę/opis (usunąć słowa kojarzone z nieruchomościami/hotelami po arabsku) i złożyć nową reklamę, czy spróbować innego regionu/formatu.
+
+## Przeróbka kreacji (31.08.2026)
+
+Sprawdzony faktyczny tekst reklamy (Ads Manager → Ad → Edit → sekcja "Text (1/5)", pole 82/100 znaków, ad-level, edytowalne niezależnie od organicznego posta) — oryginał w 100% dotyczył aplikacji hotelowej, zero real estate:
+
+> "لماذا يدعو ضيوفك الاستقبال حتى الآن؟ 📲🏨 احصل على تطبيق فندقك الخاص بنظام 'وايت ليبل'..." + hashtagi #فنادق #إدارة_الفنادق #سياحة_وفنادق itd. (dolny caption wideo, część organicznego posta TikTok @marotino_com — to jest Spark Ad, reklama recyklinguje istniejący post).
+
+**Zmieniono edytowalne pole "Ad text"** na neutralne, bez słów hotel/turystyka/nieruchomości:
+> "اكتشف تطبيق ماروتينو الذكي لخدمة العملاء بالذكاء الاصطناعي على مدار الساعة لأعمالك" (Odkryj inteligentną aplikację Marotino do obsługi klienta AI 24/7 dla Twojej firmy) — zapisane i potwierdzone w panelu.
+
+**Ważne ograniczenie znalezione przy edycji:** to jest Spark Ad — reklama korzysta z ISTNIEJĄCEGO organicznego posta TikTok (@marotino_com, wideo 0:10s). Panel Ads Managera pokazuje ostrzeżenie: *"Selected TikTok posts will continue to use their original text."* Oznacza to, że **oryginalny caption posta (z hashtagami #فنادق/#إدارة_الفنادق/#سياحة_وفنادق) nadal jest tym, co faktycznie wyświetla się w reklamie i co przechodzi przez automatyczną klasyfikację branżową TikToka — edytowalne pole "Ad text" to tylko dodatkowy, wtórny tekst.**
+
+Realna naprawa wymaga jednego z:
+1. **Edycji podpisu oryginalnego posta** na koncie TikTok @marotino_com (poza Ads Managerem, w TikTok Studio/aplikacji) — usunięcie hashtagów #فنادق/#سياحة_وفنادق. Wpłynie to na publiczny organiczny post, nie tylko reklamę.
+2. **Wgrania wideo jako świeżej kreacji** (nie jako recykling posta) w zakładce "Creative library" — obecnie pusta, więc wymaga pobrania pliku wideo i ponownego wgrania jako samodzielny asset reklamowy z czystym, kontrolowanym tekstem bez dziedziczenia captiona posta.
+
+Sprawdzono zakładkę "Creative library" w Ads Managerze — pusta, brak alternatywnego assetu bez hashtagów. Do decyzji: czy edytować publiczny post organiczny, czy pobrać i wgrać wideo jako osobny asset.
