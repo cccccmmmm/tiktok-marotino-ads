@@ -33,3 +33,15 @@ Status ad group zmienił się na "Not delivering" / "Review not approved" krótk
 - Nie ma pola "Industry" do ręcznej zmiany ani na poziomie kampanii, ani ad group, ani w ustawieniach konta — klasyfikacja jest przypisywana automatycznie przez system przeglądu treści.
 - **Rozwiązanie: przycisk "Appeal"** w panelu szczegółów odrzucenia (Ads Manager → zakładka "Ad" → kliknięcie statusu "Review not approved" → "View more" → "Appeal"). Złożono odwołanie 31.08.2026 z powodem "I don't think there's a violation" i opisem wyjaśniającym, że produkt to AI recepcjonista dla hoteli, nie usługi nieruchomości. Po submicie cała ad group wraca do ponownej weryfikacji.
 - Do sprawdzenia: status apelacji w ciągu 24-48h.
+
+## Odwołanie odrzucone (31.08.2026, 06:46)
+
+Mail "Advertisement appeal status" od TikTok For Business: *"Twoje odwołanie zostało odrzucone, ponieważ reklama jest niezgodna z naszymi zasadami reklamowymi."* (Ad ID `1874987240205426`).
+
+W panelu (Ads Manager → Ad → status "Review not approved" → "View more") widać teraz konkretny dalszy krok zamiast opcji kolejnego odwołania:
+
+> "This ad group belongs to 'Real Estate Agency' industry, which requires additional documents or qualification checks. **Upload documents or complete the quality check for 'SA-Real Estate' to deliver your ads.**" + przycisk **"Fix it"**.
+
+Czyli TikTok podtrzymał klasyfikację "Real Estate Agency" dla regionu Saudi Arabia i teraz wymaga albo (a) przesłania dokumentów/kwalifikacji nieruchomościowych (nierealne — Marotino nie jest agencją nieruchomości), albo (b) zmiany treści reklamy/opisu firmy tak, żeby nie wyzwalać tej klasyfikacji, i złożenia nowej reklamy od zera zamiast dalszego odwoływania się od tej samej.
+
+Do zrobienia: zdecydować, czy przerabiać kreatywę/opis (usunąć słowa kojarzone z nieruchomościami/hotelami po arabsku) i złożyć nową reklamę, czy spróbować innego regionu/formatu.
