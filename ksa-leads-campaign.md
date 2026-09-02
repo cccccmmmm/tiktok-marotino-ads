@@ -93,3 +93,15 @@ Pułapka techniczna przy edycji opisu: pole opisu w TikTok Studio to edytor Draf
 Do zrobienia: sprawdzić za 24-48h czy nowa reklama przeszła weryfikację i czy zniknęła klasyfikacja "Real Estate Agency"; potem skasować stary post (7673115280951971094, 605 wyświetleń).
 
 **Aktualizacja:** próba skasowania starego posta po podmianie kreacji dalej zablokowana tym samym komunikatem ("Videos with commercial content can only be edited on the TikTok app") — mimo że reklama już go nie używa. To trwałe ograniczenie TikToka: post raz użyty jako Spark Ad dostaje flagę "commercial content" i można go skasować **tylko z aplikacji mobilnej TikTok**, nie z web/Studio. Cezary musi skasować go ręcznie z telefonu (Profil → film → "..." → Delete).
+
+## Jakość leadów — filtry wdrożone 02.09.2026
+
+Dotychczasowe leady (17 szt.) w większości śmieciowe — losowe imiona, brak nazwy firmy, brak intencji. Wdrożone poprawki:
+
+1. **Pole "Company name" (wymagane)** dodane do Instant Form — Personal Information: Email, Name, Phone number, Company name. Pola Personal Information nie mają przełącznika Optional, więc są wymagane automatycznie jak reszta.
+2. **Pytanie kwalifikujące z logiką rozgałęzień** (sekcja Custom → Logic settings): "هل تدير فندقًا حاليًا؟" (Czy zarządzasz obecnie hotelem?), odpowiedzi نعم (Tak) / لا (Nie). Nie → "Close the form" (formularz kończy się bez zbierania danych osobowych, więc odsiewa niekwalifikowanych zanim zdążą zostawić kontakt). Tak → "Continue to personal info".
+3. **Zawężony targeting**: Detailed targeting → Spending power zmienione z "All" na **"High spending power"**. Dostępna grupa spadła z "Balanced" (32,138,000–39,280,000) do "Narrow" (6,308,000–7,712,000) — TikTok ostrzega "Your audience is narrow", świadoma decyzja.
+
+**Historia edycji formularza:** TikTok nie pozwala edytować formularza "w miejscu" gdy jest już podpięty do aktywnej reklamy (tak jak przy dodawaniu numeru telefonu 31.08) — każda zmiana tworzy nową kopię (`type=copy` w URL edytora), więc powstał łańcuch: `...Copy` (telefon) → `...Copy Copy` (bez zmian, artefakt otwarcia edytora) → `...Copy Copy Copy` (finalna wersja z Company name + pytaniem kwalifikującym, page_id `7681015289730859282`). Oba reklamy w ad groupie (`1875053690980641`, `1874987240205426`) przełączone na tę finalną wersję przez "Replace → Select from library" (trzeba było filtrować po dokładnym page_id, bo lista formularzy pokazuje kilka wpisów o identycznej obciętej nazwie). Po każdej zmianie formularza reklama wraca do statusu "Creative in edit review".
+
+Automatyzacja pobierania i wpisywania leadów do Twenty opisana w [[lead-automation-api]].
